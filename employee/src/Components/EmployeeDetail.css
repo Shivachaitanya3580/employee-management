@@ -1,0 +1,387 @@
+/* EmployeeDetail.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+
+.employee-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  color: #fff;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.logo {
+  font-size: clamp(20px, 4vw, 24px);
+  font-weight: 700;
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px 16px 0 0;
+}
+
+.employee-detail-main {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 100%;
+  width: 100%;
+  max-width: 800px;
+}
+
+.header h2 {
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.employee-detail-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+}
+
+.employee-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.employee-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.employee-photo img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 4px solid #3b82f6;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.employee-photo img:hover {
+  transform: scale(1.05);
+  border-color: #1d4ed8;
+}
+
+.employee-info {
+  margin-left: 0;
+  color: #1e293b;
+  width: 100%;
+}
+
+.employee-info h3 {
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  font-size: clamp(24px, 5vw, 28px);
+  font-weight: 700;
+}
+
+.employee-info p {
+  margin: 0.75rem 0;
+  font-size: 16px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.work-status {
+  margin: 1.5rem 0;
+}
+
+.work-status .status {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status.pending {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.status.completed {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+  font-size: 16px;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(239, 68, 68, 0.4);
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.status-modal {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  color: #1e293b;
+  transform: scale(0.9);
+  animation: modalSlideIn 0.3s ease forwards;
+}
+
+@keyframes modalSlideIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+.status-modal h3 {
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.status-buttons button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 120px;
+}
+
+.status-comment {
+  width: 100%;
+  height: 100px;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+.status-comment:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.modal-actions button {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  min-width: 120px;
+}
+
+.modal-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.save {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+}
+
+.cancel {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.pending {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.completed {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+/* Mobile Responsiveness */
+@media (min-width: 768px) {
+  .employee-detail-card {
+    flex-direction: row;
+    text-align: left;
+    gap: 0;
+  }
+  
+  .employee-info {
+    margin-left: 2rem;
+  }
+  
+  .employee-info h3 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .employee-detail-container {
+    padding: 0.5rem;
+  }
+  
+  .employee-detail-main {
+    padding: 1rem;
+  }
+  
+  .employee-detail-card {
+    padding: 1.5rem;
+  }
+  
+  .employee-photo img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .status-modal {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .status-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .status-buttons button {
+    width: 100%;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .modal-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-detail-card {
+    padding: 1rem;
+  }
+  
+  .employee-photo img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .employee-info h3 {
+    font-size: 20px;
+  }
+  
+  .employee-info p {
+    font-size: 14px;
+  }
+  
+  .status-modal {
+    padding: 1rem;
+  }
+  
+  .status-modal h3 {
+    font-size: 20px;
+  }
+}

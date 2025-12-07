@@ -1,0 +1,82 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;  /* Light gray background for the body */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Profile Page Container */
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    width: 100%;
+    max-width: 600px;
+    background: linear-gradient(145deg, #deddec, #a4beed);  /* Soft gradient for the card */
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Profile Title */
+  .profile-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2c3e50;  /* Darker color for the title */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Profile Details Section */
+  .profile-details {
+    margin-bottom: 25px;
+  }
+  
+  .profile-detail {
+    margin-bottom: 15px;
+  }
+  
+  .profile-detail h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #34495e;  /* Slightly lighter gray for details */
+  }
+  
+  /* Card Hover Effect */
+  .profile-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-card {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .profile-title {
+      font-size: 1.8rem;
+    }
+  
+    .profile-detail h5 {
+      font-size: 1rem;
+    }
+  }
+
+
+
+  

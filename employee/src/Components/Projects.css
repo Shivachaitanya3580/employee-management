@@ -1,0 +1,74 @@
+/* Base card styling */
+.project-card {
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+/* Hover animation */
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Expanded card content */
+.project-card.expanded {
+  background-color: #e3f2fd;
+  transform: scale(1.01);
+}
+
+/* Responsive typography */
+.project-card h3,
+.project-card h4 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Make card content wrap cleanly */
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+
+  .project-card h3,
+  .project-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 12px;
+  }
+
+  .project-card h3,
+  .project-card h4 {
+    font-size: 1rem;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
+  }
+}
